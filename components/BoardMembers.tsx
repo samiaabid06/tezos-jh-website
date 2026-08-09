@@ -14,7 +14,7 @@ export default function BoardMembers() {
   id: 1,
   name: "Naumaan Ali Siddiqui",
   position: "Chairperson",
-  image: "", // Add image path when available
+  image: "/members/noumaan.jpeg", // Add image path when available
   github: "",
   linkedin: "https://www.linkedin.com/in/naumaan-siddiqui-24976b261",
   email: "mailto:naumaansiddiqui10@gmail.com",
@@ -23,7 +23,7 @@ export default function BoardMembers() {
     id: 2,
     name: "Rakshanda Noor",
     position: "Community Lead",
-    image: "", // Add image path when available
+    image: "/members/rakshanda.jpg", // Add image path when available
     github: "https://github.com/rakshanda33",
     linkedin: "https://www.linkedin.com/in/rakshanda-noor-9aaa24291",
     email: "mailto:rakshandanoor20@gmail.com",
@@ -50,7 +50,7 @@ export default function BoardMembers() {
     id: 5,
     name: "Mohammed Fardeen",
     position: "General Secretary",
-    image: "", // Add image path when available
+    image: "/members/fardeen.jpeg", // Add image path when available
     github: "https://github.com/Fardeen-gamer",
     linkedin: "https://www.linkedin.com/in/mohammed-fardeen-4a903a34b",
     email: "mailto:Fardeensheikh1880@gmai.com",
