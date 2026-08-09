@@ -11,7 +11,7 @@ const Credits: React.FC = () => {
 
   const teamMembers: TeamMember[] = [
     { name: 'Khubaib', role: 'Lead Developer' },
-    { name: 'Tahaa', role: 'Frontend Developer' },
+    { name: 'Taaha', role: 'Frontend Developer' },
     { name: 'Aatika', role: 'UI/UX Designer' },
     { name: 'Laiba Zeeai', role: 'Backend Developer' },
     { name: 'Heba', role: 'Content Manager' },
