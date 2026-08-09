@@ -32,7 +32,7 @@ export default function BoardMembers() {
     id: 3,
     name: "Shezan Ali",
     position: "Community Co-Lead",
-    image: "", // Add image path when available
+    image: "/members/shezan.jpg", // Add image path when available
     github: "",
     linkedin: "https://www.linkedin.com/in/shezanali",
     email: "mailto:shezan.workspace@gmail.com",
@@ -41,7 +41,7 @@ export default function BoardMembers() {
     id: 4,
     name: "Arham",
     position: "Community Co-Lead",
-    image: "", // Add image path when available
+    image: "/members/arham.jpg", // Add image path when available
     github: "",
     linkedin: "",
     email: "",
