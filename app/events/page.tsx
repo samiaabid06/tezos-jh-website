@@ -11,6 +11,7 @@ import {
   Clock,
 } from "lucide-react";
 import Link from "next/link";
+import "../globals.css"
 
 interface Event {
   id: number;
@@ -25,6 +26,28 @@ interface Event {
 const events: Event[] = [
   {
     id: 1,
+    title: "Tezos Code Verse",
+    date: "25 April 2026",
+    description:
+      "A 3-hour Web-Dev Hackathon where participants build, innovate and compete. Teams of two compete for exciting prizes with mentorship from seniors throughout the event.",
+    image: "/events/code-verse.jpg",
+    location: "Jamia Hamdard, New Delhi",
+    category: "Hackathon",
+  },
+
+  {
+    id: 2,
+    title: "Elevate — Women in Tech",
+    date: "8 March 2026",
+    description:
+      "A Women's Day special focused on empowering and inspiring women in technology through insights, experiences and conversations around learning, careers and building meaningful connections.",
+    image: "/events/elevate.jpg",
+    location: "Online — Google Meet",
+    category: "Women in Tech",
+  },
+
+  {
+    id: 3,
     title: "Pathfinder'25",
     date: "27 August 2025",
     description:
@@ -33,28 +56,20 @@ const events: Event[] = [
     location: "Jamia Hamdard, New Delhi",
     category: "Community",
   },
-  {
-    id: 2,
-    title: "Build on Azure",
-    date: "4 September 2024",
-    description:
-      "An introduction to Microsoft Azure along with blockchain, DevOps and cybersecurity concepts.",
-    image: "/events/azure.jpg",
-    location: "Jamia Hamdard, New Delhi",
-    category: "Workshop",
-  },
-  {
-    id: 3,
-    title: "Profile Building",
-    date: "2 October 2024",
-    description:
-      "A session focused on version control, collaborative coding and building a strong developer profile.",
-    image: "/events/profile.jpg",
-    location: "Jamia Hamdard, New Delhi",
-    category: "Workshop",
-  },
+
   {
     id: 4,
+    title: "Supermove Tour",
+    date: "15 October 2024",
+    description:
+      "A Web3-focused session featuring wallet integration and Aptos deployment with Spheron.",
+    image: "/e5.png",
+    location: "New Delhi",
+    category: "Web3",
+  },
+
+  {
+    id: 5,
     title: "Hacktoberfest: Build-a-thon",
     date: "15 October 2024",
     description:
@@ -63,15 +78,27 @@ const events: Event[] = [
     location: "Jamia Hamdard, New Delhi",
     category: "Hackathon",
   },
+
   {
-    id: 5,
-    title: "Supermove Tour",
-    date: "15 October 2024",
+    id: 6,
+    title: "Profile Building",
+    date: "2 October 2024",
     description:
-      "A Web3-focused session featuring wallet integration and Aptos deployment with Spheron.",
-    image: "/e5.png",
-    location: "New Delhi",
-    category: "Web3",
+      "A session focused on version control, collaborative coding and building a strong developer profile.",
+    image: "/events/profile.jpg",
+    location: "Jamia Hamdard, New Delhi",
+    category: "Workshop",
+  },
+
+  {
+    id: 7,
+    title: "Build on Azure",
+    date: "4 September 2024",
+    description:
+      "An introduction to Microsoft Azure along with blockchain, DevOps and cybersecurity concepts.",
+    image: "/events/azure.jpg",
+    location: "Jamia Hamdard, New Delhi",
+    category: "Workshop",
   },
 ];
 
