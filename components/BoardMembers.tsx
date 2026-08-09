@@ -10,34 +10,52 @@ interface BoardMember {
 
 export default function BoardMembers() {
   const boardMembers: BoardMember[] = [
-    {
-      id: 1,
-      name: "Md Aasif",
-      position: "Community Lead",
-      image: "/md-aasif4.jpg", // Replace with your actual image path
-      github: "https://github.com/MdAasif09",
-      linkedin: "https://www.linkedin.com/in/md-aasif",
-      email: "mailto:syedaasif009@gmail.com",
-    },
-    {
-      id: 2,
-      name: "Rahul Singh",
-      position: "Chairperson",
-      image: "/rahul-singh1.jpg", // Replace with your actual image path
-      github: "https://github.com/RahulSH004",
-      linkedin: "https://www.linkedin.com/in/rahul-singh111 ",
-      email: "mailto:rs739025@gmail.com",
-    },
-    {
-      id: 3,
-      name: "Sana Siddique",
-      position: "Community Co-Lead",
-      image: "/sana-sid.jpg", // Replace with your actual image path
-      github: "https://github.com/Sanasid89",
-      linkedin: "https://www.linkedin.com/in/sana-sid-421ab1277",
-      email: "mailto:-siddiquesana239@gmail.com",
-    }
-  ];
+  {
+  id: 1,
+  name: "Naumaan Ali Siddiqui",
+  position: "Chairperson",
+  image: "", // Add image path when available
+  github: "",
+  linkedin: "https://www.linkedin.com/in/naumaan-siddiqui-24976b261",
+  email: "mailto:naumaansiddiqui10@gmail.com",
+},
+  {
+    id: 2,
+    name: "Rakshanda Noor",
+    position: "Community Lead",
+    image: "", // Add image path when available
+    github: "https://github.com/rakshanda33",
+    linkedin: "https://www.linkedin.com/in/rakshanda-noor-9aaa24291",
+    email: "mailto:rakshandanoor20@gmail.com",
+  },
+  {
+    id: 3,
+    name: "Shezan Ali",
+    position: "Community Co-Lead",
+    image: "", // Add image path when available
+    github: "",
+    linkedin: "https://www.linkedin.com/in/shezanali",
+    email: "mailto:shezan.workspace@gmail.com",
+  },
+  {
+    id: 4,
+    name: "Arham",
+    position: "Community Co-Lead",
+    image: "", // Add image path when available
+    github: "",
+    linkedin: "",
+    email: "",
+  },
+  {
+    id: 5,
+    name: "Mohammed Fardeen",
+    position: "General Secretary",
+    image: "", // Add image path when available
+    github: "https://github.com/Fardeen-gamer",
+    linkedin: "https://www.linkedin.com/in/mohammed-fardeen-4a903a34b",
+    email: "mailto:Fardeensheikh1880@gmai.com",
+  },
+];
 
   return (
     <section className="py-16 px-4 bg-transparent min-h-screen">

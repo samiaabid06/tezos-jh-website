@@ -8,16 +8,16 @@ export default function TeamButton({
   onTeamSelect: (team: string) => void;
 }) {
   const teams = [
-    "Founding Members",
-    "Core  Members",
-    "Tech Team",
-    "Social Media Team",
-    "Media Team",
-    "Content Team",
-    "Management Team",
-    "Designing Team",
-    "PR Team",
-  ];
+  "Founding Members",
+  "Core Members",
+  "Tech Team",
+  "Media Team",
+  "Content Team",
+  "Graphic Team",
+  "PR Team",
+  "Event Team",
+];
+  
 
   return (
     <div className="flex gap-4 overflow-x-auto px-4 scrollbar-hide">
