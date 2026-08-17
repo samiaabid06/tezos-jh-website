@@ -13,6 +13,8 @@ import {
   Handshake,
   BookOpen,
   MapPin,
+  Globe,
+  Award,
   ChevronRight,
   MessageCircle,
   Youtube,
@@ -25,19 +27,51 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "GitHub", icon: Github, url: "https://github.com/tezosjh" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/tezos-club-jamia-hamdard/" },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://www.linkedin.com/company/tezos-club-jamia-hamdard/",
+    },
     { name: "Twitter", icon: Twitter, url: "https://x.com/tezosclubjh" },
-    { name: "WhatsApp", icon: MessageCircle, url: "https://chat.whatsapp.com/KE7NMuGrncu3KTfSpvFqmo" },
+    {
+      name: "WhatsApp",
+      icon: MessageCircle,
+      url: "https://chat.whatsapp.com/KE7NMuGrncu3KTfSpvFqmo",
+    },
     { name: "YouTube", icon: Youtube, url: "https://www.youtube.com/@TezosJH" },
     { name: "Discord", icon: Users, url: "https://discord.gg/DHMfYMfu" },
-    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/tezosclub.jh/" },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://www.instagram.com/tezosclub.jh/",
+    },
   ];
 
   const quickActions = [
-    { title: "Call for Speakers", icon: Mic, description: "Share your blockchain expertise with the club", action: "Apply Now" },
-    { title: "Sponsor Us", icon: Handshake, description: "Partner with a growing dev community", action: "Become Sponsor" },
-    { title: "Join Community", icon: Users, description: "Be part of the build sessions and events", action: "Join Discord" },
-    { title: "Read Blogs", icon: BookOpen, description: "Tutorials and write-ups from our devs", action: "Read Articles" },
+    {
+      title: "Call for Speakers",
+      icon: Mic,
+      description: "Share your blockchain expertise with the club",
+      action: "Apply Now",
+    },
+    {
+      title: "Sponsor Us",
+      icon: Handshake,
+      description: "Partner with a growing dev community",
+      action: "Become Sponsor",
+    },
+    {
+      title: "Join Community",
+      icon: Users,
+      description: "Be part of the build sessions and events",
+      action: "Join Discord",
+    },
+    {
+      title: "Read Blogs",
+      icon: BookOpen,
+      description: "Tutorials and write-ups from our devs",
+      action: "Read Articles",
+    },
   ];
 
   return (
@@ -54,27 +88,37 @@ const Footer = () => {
                 Connect With Us
               </span>
             </div>
+
             <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
               Build The{" "}
               <span className="text-tezos-gradient">Decentralized Web</span>
             </h2>
-            
+
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
-              Join India's most dynamic blockchain society where students, developers, and enthusiasts 
-              come together to shape the decentralized future with <span className="text-purple-400 font-semibold">Tezos technology</span>.
+              Join India&apos;s most dynamic blockchain society where students,
+              developers, and enthusiasts come together to shape the
+              decentralized future with{" "}
+              <span className="text-purple-400 font-semibold">
+                Tezos technology
+              </span>
+              .
             </p>
-            
+
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               {[
-                { number: '100+', label: 'Members' },
-                { number: '25+', label: 'Events' },
-                { number: '15+', label: 'Workshops' },
-                { number: '50+', label: 'Projects' }
+                { number: "100+", label: "Members" },
+                { number: "25+", label: "Events" },
+                { number: "15+", label: "Workshops" },
+                { number: "50+", label: "Projects" },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-purple-300 text-sm uppercase tracking-wide">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-purple-300 text-sm uppercase tracking-wide">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -84,6 +128,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-20">
             {quickActions.map((action, idx) => {
               const Icon = action.icon;
+
               return (
                 <motion.div
                   key={idx}
@@ -100,12 +145,15 @@ const Footer = () => {
                         size={20}
                       />
                     </div>
+
                     <h3 className="text-white font-bold text-lg mb-2">
                       {action.title}
                     </h3>
+
                     <p className="text-gray-500 text-sm mb-6 leading-relaxed">
                       {action.description}
                     </p>
+
                     <button className="flex items-center text-sm font-medium text-[#2C7DF7] group-hover:text-[#00E5FF] transition-colors">
                       {action.action}
                       <ChevronRight
@@ -123,6 +171,7 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {socialLinks.map((social, idx) => {
               const Icon = social.icon;
+
               return (
                 <a
                   key={idx}
@@ -154,17 +203,19 @@ const Footer = () => {
 
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] pulse-dot" />
               </div>
-              
+
               <p className="text-gray-400 leading-relaxed">
-                India's premier student-led blockchain society, empowering the next generation of 
-                developers to build revolutionary decentralized applications on the Tezos ecosystem.
+                India&apos;s premier student-led blockchain society, empowering
+                the next generation of developers to build revolutionary
+                decentralized applications on the Tezos ecosystem.
               </p>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <MapPin size={16} className="text-purple-400" />
                   <span>New Delhi, India</span>
                 </div>
+
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <Globe size={16} className="text-purple-400" />
                   <span>Global Community</span>
@@ -176,6 +227,7 @@ const Footer = () => {
               <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
                 Explore
               </h4>
+
               <ul className="space-y-3">
                 {[
                   { name: "Home", href: "/" },
@@ -200,6 +252,7 @@ const Footer = () => {
               <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
                 Resources
               </h4>
+
               <ul className="space-y-3">
                 {[
                   "Documentation",
@@ -213,7 +266,8 @@ const Footer = () => {
                       href="#"
                       className="text-gray-400 hover:text-[#00E5FF] transition-colors text-sm flex items-center gap-2"
                     >
-                      {res} <ExternalLink size={12} className="opacity-50" />
+                      {res}
+                      <ExternalLink size={12} className="opacity-50" />
                     </a>
                   </li>
                 ))}
@@ -224,6 +278,7 @@ const Footer = () => {
               <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
                 Tech Stack
               </h4>
+
               <div className="flex flex-wrap gap-2">
                 {[
                   "Tezos",
@@ -249,27 +304,42 @@ const Footer = () => {
             <div className="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 backdrop-blur-sm border border-purple-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center">
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <Award className="text-purple-400" size={24} />
+
                 <div>
-                  <h5 className="text-xl sm:text-2xl font-bold text-white">Jamia Hamdard University</h5>
-                  <p className="text-purple-300 text-sm sm:text-base">Fostering Innovation in Blockchain & Web3</p>
+                  <h5 className="text-xl sm:text-2xl font-bold text-white">
+                    Jamia Hamdard University
+                  </h5>
+
+                  <p className="text-purple-300 text-sm sm:text-base">
+                    Fostering Innovation in Blockchain &amp; Web3
+                  </p>
                 </div>
               </div>
+
               <p className="text-gray-400 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
-                Recognized as one of India's leading institutions for technology education, 
-                supporting student-led initiatives that drive innovation in emerging technologies.
+                Recognized as one of India&apos;s leading institutions for
+                technology education, supporting student-led initiatives that
+                drive innovation in emerging technologies.
               </p>
             </div>
-            <div className="flex items-center gap-6 text-sm text-gray-500">
+
+            <div className="flex items-center gap-6 text-sm text-gray-500 mt-6">
               <a href="#" className="hover:text-white transition-colors">
                 Privacy
               </a>
+
               <a href="#" className="hover:text-white transition-colors">
                 Terms
               </a>
+
               <a href="#" className="hover:text-white transition-colors">
                 Code of Conduct
               </a>
             </div>
+          </div>
+
+          <div className="mt-8 text-center text-sm text-gray-600">
+            © {currentYear} Tezos JH. All rights reserved.
           </div>
         </div>
       </footer>
