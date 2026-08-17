@@ -222,3 +222,8 @@
 .text-tezos-gradient {
   @apply text-transparent bg-clip-text bg-gradient-to-r from-[#2C7DF7] via-[#4D5EFF] to-[#00E5FF];
 }
+
+/* Subtle grid movement during scroll */
+.grid-overlay {
+  will-change: transform;
+}

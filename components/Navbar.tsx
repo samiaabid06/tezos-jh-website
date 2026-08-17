@@ -56,7 +56,6 @@ export const Navbar = () => {
                 <Link
                   key={link.path}
                   href={link.path}
-                  target={link.name === "Members" ? "_blank" : "_self"}
                   className="relative px-4 py-2 text-sm font-medium"
                 >
                   {isActive && (

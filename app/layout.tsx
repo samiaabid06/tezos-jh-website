@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import CursorSpotlight from "@/components/CursorSpotlight";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,15 +38,18 @@ export default function RootLayout({
         <link rel="icon" type="image/x-icon" href="/icon2.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-[#020204] text-gray-100 overflow-x-hidden antialiased selection:bg-[#2C7DF7] selection:text-white`}
-      >
-        <div className="aurora-mesh" />
-        <CursorSpotlight />
-        <div className="relative z-10">
-          <NavbarWrapper />
-          <main>{children}</main>
-        </div>
-      </body>
+  className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-[#020204] text-gray-100 overflow-x-hidden antialiased selection:bg-[#2C7DF7] selection:text-white`}
+>
+  <ScrollProgress />
+
+  <div className="aurora-mesh" />
+  <CursorSpotlight />
+
+  <div className="relative z-10">
+    <NavbarWrapper />
+    <main>{children}</main>
+  </div>
+</body>
     </html>
   );
 }

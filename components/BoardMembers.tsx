@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Radio } from "lucide-react";
+import ScrollGrid from "@/components/ScrollGrid";
 
 interface BoardMember {
   id: number;
@@ -66,7 +67,7 @@ export default function BoardMembers() {
 
   return (
     <section className="spotlight-zone relative py-24 px-4 overflow-hidden">
-      <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
+      <ScrollGrid opacity={0.3} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
@@ -135,7 +136,7 @@ export default function BoardMembers() {
                           >
                             <social.icon className="w-3.5 h-3.5" />
                           </a>
-                        )
+                        ),
                     )}
                   </div>
                 </div>

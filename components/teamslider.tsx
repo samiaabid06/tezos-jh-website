@@ -226,3 +226,4 @@ const TeamSliderCards: React.FC = () => {
 };
 
 export default TeamSliderCards;
+ 

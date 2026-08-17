@@ -19,6 +19,7 @@ import {
   Code,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import ScrollGrid from "@/components/ScrollGrid";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,7 +45,7 @@ const Footer = () => {
     <div className="relative w-full overflow-hidden border-t border-white/[0.06]">
       {/* Pre-Footer CTA */}
       <section className="spotlight-zone relative py-24 border-b border-white/[0.06]">
-        <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
+        <ScrollGrid opacity={0.4} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -55,7 +56,8 @@ const Footer = () => {
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              Build The <span className="text-tezos-gradient">Decentralized Web</span>
+              Build The{" "}
+              <span className="text-tezos-gradient">Decentralized Web</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
               A student community on the Tezos ecosystem — builders, designers,
@@ -78,13 +80,23 @@ const Footer = () => {
                 >
                   <div className="relative z-10 bg-white/[0.02] border border-white/[0.06] rounded-[1.75rem] p-6 group-hover:bg-white/[0.04] transition-all duration-500">
                     <div className="w-12 h-12 bg-white/[0.04] border border-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#2C7DF7]/15 group-hover:border-[#2C7DF7]/40 transition-colors">
-                      <Icon className="text-gray-300 group-hover:text-[#00E5FF] transition-colors" size={20} />
+                      <Icon
+                        className="text-gray-300 group-hover:text-[#00E5FF] transition-colors"
+                        size={20}
+                      />
                     </div>
-                    <h3 className="text-white font-bold text-lg mb-2">{action.title}</h3>
-                    <p className="text-gray-500 text-sm mb-6 leading-relaxed">{action.description}</p>
+                    <h3 className="text-white font-bold text-lg mb-2">
+                      {action.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                      {action.description}
+                    </p>
                     <button className="flex items-center text-sm font-medium text-[#2C7DF7] group-hover:text-[#00E5FF] transition-colors">
                       {action.action}
-                      <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
+                      <ChevronRight
+                        size={16}
+                        className="ml-1 transition-transform group-hover:translate-x-1"
+                      />
                     </button>
                   </div>
                 </motion.div>
@@ -105,7 +117,9 @@ const Footer = () => {
                   className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.02] border border-white/[0.06] text-gray-400 hover:text-white hover:bg-[#2C7DF7]/10 hover:border-[#2C7DF7]/40 transition-all duration-300"
                 >
                   <Icon size={16} />
-                  <span className="text-sm font-medium hidden sm:block">{social.name}</span>
+                  <span className="text-sm font-medium hidden sm:block">
+                    {social.name}
+                  </span>
                 </a>
               );
             })}
@@ -122,14 +136,19 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-[#2C7DF7] to-[#00E5FF] rounded-xl flex items-center justify-center">
                   <Code className="text-white w-5 h-5" />
                 </div>
-                <h3 className="text-2xl font-bold text-white tracking-tight">Tezos JH</h3>
+                <h3 className="text-2xl font-bold text-white tracking-tight">
+                  Tezos JH
+                </h3>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                 A student-run society building on Tezos — real projects, real
                 shipping, real community.
               </p>
               <div className="flex flex-col space-y-2 pt-2">
-                <a href="mailto:tezosjh@gmail.com" className="text-gray-300 hover:text-[#00E5FF] transition-colors text-sm flex items-center gap-2">
+                <a
+                  href="mailto:tezosjh@gmail.com"
+                  className="text-gray-300 hover:text-[#00E5FF] transition-colors text-sm flex items-center gap-2"
+                >
                   <Mail size={14} /> tezosjh@gmail.com
                 </a>
                 <span className="text-gray-500 text-sm flex items-center gap-2">
@@ -139,7 +158,9 @@ const Footer = () => {
             </div>
 
             <div className="lg:col-span-2 space-y-6">
-              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">Explore</h4>
+              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
+                Explore
+              </h4>
               <ul className="space-y-3">
                 {[
                   { name: "Home", href: "/" },
@@ -149,7 +170,10 @@ const Footer = () => {
                   { name: "Credits", href: "/credits" },
                 ].map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-400 hover:text-[#00E5FF] transition-colors text-sm">
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-[#00E5FF] transition-colors text-sm"
+                    >
                       {link.name}
                     </a>
                   </li>
@@ -158,11 +182,22 @@ const Footer = () => {
             </div>
 
             <div className="lg:col-span-3 space-y-6">
-              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">Resources</h4>
+              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
+                Resources
+              </h4>
               <ul className="space-y-3">
-                {["Documentation", "Developer Portal", "Tezos Agora", "SmartPy", "Temple Wallet"].map((res) => (
+                {[
+                  "Documentation",
+                  "Developer Portal",
+                  "Tezos Agora",
+                  "SmartPy",
+                  "Temple Wallet",
+                ].map((res) => (
                   <li key={res}>
-                    <a href="#" className="text-gray-400 hover:text-[#00E5FF] transition-colors text-sm flex items-center gap-2">
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-[#00E5FF] transition-colors text-sm flex items-center gap-2"
+                    >
                       {res} <ExternalLink size={12} className="opacity-50" />
                     </a>
                   </li>
@@ -171,10 +206,22 @@ const Footer = () => {
             </div>
 
             <div className="lg:col-span-3 space-y-6">
-              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">Tech Stack</h4>
+              <h4 className="text-xs font-bold text-white tracking-[0.2em] uppercase font-mono">
+                Tech Stack
+              </h4>
               <div className="flex flex-wrap gap-2">
-                {["Tezos", "Michelson", "LIGO", "SmartPy", "Next.js", "Tailwind"].map((tech) => (
-                  <span key={tech} className="px-3 py-1.5 bg-white/[0.03] border border-white/[0.06] text-gray-400 text-xs rounded-lg font-mono">
+                {[
+                  "Tezos",
+                  "Michelson",
+                  "LIGO",
+                  "SmartPy",
+                  "Next.js",
+                  "Tailwind",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 bg-white/[0.03] border border-white/[0.06] text-gray-400 text-xs rounded-lg font-mono"
+                  >
                     {tech}
                   </span>
                 ))}
@@ -187,9 +234,15 @@ const Footer = () => {
               <span>© {currentYear} Tezos Jamia Hamdard</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
-              <a href="#" className="hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-              <a href="#" className="hover:text-white transition-colors">Code of Conduct</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                Terms
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                Code of Conduct
+              </a>
             </div>
           </div>
         </div>
