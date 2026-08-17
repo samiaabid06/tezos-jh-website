@@ -14,6 +14,16 @@ import {
 import { ArrowRight } from "lucide-react";
 import HeroObject from "@/components/HeroObject";
 
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  color: string;
+}
+
 // Particle network — kept, but now brand-tuned (violet + cyan nodes, not flat blue)
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -25,7 +35,7 @@ const ParticleNetwork = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: any[] = [];
+    let particles: Particle[] = [];
     let animationFrameId: number;
 
     const colors = ["44,125,247", "0,229,255", "77,94,255"];
@@ -301,7 +311,7 @@ const HeroSection: React.FC = () => {
               }}
               className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              We're a student community building, learning, and shipping on
+              We&apos;re a student community building, learning, and shipping on
               Tezos — from smart contracts and tooling to the people behind
               them.
             </motion.p>

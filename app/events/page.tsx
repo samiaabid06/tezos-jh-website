@@ -133,7 +133,7 @@ export default function EventsPage() {
                   </span>
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-                  What We've{" "}
+                  What We&apos;ve{" "}
                   <span className="text-tezos-gradient">Built Together</span>
                 </h1>
                 <p className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">
@@ -256,7 +256,7 @@ export default function EventsPage() {
                 <div className="relative z-10 rounded-[1.75rem] border border-white/[0.06] bg-[#08080c] p-12 text-center overflow-hidden">
                   <ScrollGrid opacity={0.4} />
                   <h2 className="relative text-3xl font-bold mb-4 text-white">
-                    Don't miss the next one.
+                    Don&apos;t miss the next one.
                   </h2>
                   <p className="relative text-gray-400 max-w-lg mx-auto mb-8 leading-relaxed">
                     Join the Discord to get early access to our upcoming

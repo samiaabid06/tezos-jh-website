@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Crown,
   Mail,
-  Phone,
   Github,
   Linkedin,
   Twitter,
@@ -202,21 +201,6 @@ export default function MembersPage() {
               </div>
             )}
 
-            {member.phone && (
-              <div className="flex items-center gap-4 bg-white/[0.02] border border-white/[0.06] rounded-2xl p-4 hover:bg-white/[0.04] transition-colors">
-                <div className="bg-white/5 p-2.5 rounded-xl border border-white/10">
-                  <Phone className="w-5 h-5 text-gray-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-0.5 font-mono">
-                    Phone
-                  </p>
-                  <p className="text-gray-200 text-sm font-medium">
-                    {member.phone}
-                  </p>
-                </div>
-              </div>
-            )}
           </div>
 
           {(member.github || member.linkedin || member.x) && (
