@@ -1,38 +1,39 @@
 "use client";
 
 import BoardMembers from "@/components/BoardMembers";
-import TeamButton from "@/components/button/TeamButtons";
 import CarouselSlider from "@/components/eventslider";
 import Footer from "@/components/foot";
 import HeroSection from "@/components/hero";
-import Navbar from "@/components/Navbar";
 import TeacherC from "@/components/Teacher";
 import TeamSliderCards from "@/components/teamslider";
-import Credits from "./credits/page";
-
-
-
-
-
+import ScrollFloat from "@/components/ScrollFloat";
 
 export default function Home() {
   return (
-    <div>
-      {/* Navbar stays fixed at the top */}
-      <Navbar />
+    <main>
+      {/* HERO */}
+      <HeroSection />
 
-      {/* Page content */}
-      <main className="">
-        {/*  Add Hero Section later */}
-        <HeroSection /> 
+      {/* FACULTY */}
+      <ScrollFloat strength={0.7}>
         <TeacherC />
-        < BoardMembers />
-        < TeamSliderCards />
-        < CarouselSlider />
-        < Footer />
-        
-        {/* Team Section */}
-      </main>
-    </div>
+      </ScrollFloat>
+
+      <ScrollFloat strength={1}>
+        <BoardMembers />
+      </ScrollFloat>
+
+      <ScrollFloat strength={1.25}>
+        <TeamSliderCards />
+      </ScrollFloat>
+
+      <ScrollFloat strength={0.8}>
+        <CarouselSlider />
+      </ScrollFloat>
+
+      <ScrollFloat strength={0.7}>
+        <Footer />
+      </ScrollFloat>
+    </main>
   );
 }
