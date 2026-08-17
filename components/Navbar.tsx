@@ -37,11 +37,24 @@ export const Navbar = () => {
       >
         <div className="flex justify-between items-center h-9">
           {/* Logo — unchanged, just wrapped with a signal dot */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group"
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             <img
               src="/logo.png"
               alt="Tezos JH Logo"
-              className="h-8 md:h-9 w-auto group-hover:scale-105 transition-transform duration-300"
+              className="h-8 md:h-9 w-auto group-hover:scale-105 group-active:scale-95 transition-transform duration-300"
             />
             <span className="hidden sm:flex items-center gap-1.5 pl-2.5 border-l border-white/10">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] pulse-dot" />
@@ -61,7 +74,11 @@ export const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 32,
+                      }}
                       className="absolute inset-0 rounded-full bg-white/[0.06] border border-white/[0.08]"
                     />
                   )}
