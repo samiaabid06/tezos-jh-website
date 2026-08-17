@@ -239,6 +239,7 @@ const HeroSection: React.FC = () => {
 
             {/* Per-letter headline reveal */}
             <div className="flex justify-center lg:justify-start mb-1 overflow-hidden">
+              {/* Tezos brand mark */}
               {headline.split("").map((char, i) => (
                 <motion.span
                   key={i}

@@ -16,7 +16,6 @@ import {
   ChevronRight,
   MessageCircle,
   Youtube,
-  Code,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollGrid from "@/components/ScrollGrid";
@@ -133,12 +132,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
             <div className="lg:col-span-4 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#2C7DF7] to-[#00E5FF] rounded-xl flex items-center justify-center">
-                  <Code className="text-white w-5 h-5" />
-                </div>
                 <h3 className="text-2xl font-bold text-white tracking-tight">
                   Tezos JH
                 </h3>
+
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] pulse-dot" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                 A student-run society building on Tezos — real projects, real
