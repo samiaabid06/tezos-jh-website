@@ -6,7 +6,7 @@ import Footer from "@/components/foot";
 import HeroSection from "@/components/hero";
 import TeacherC from "@/components/Teacher";
 import TeamSliderCards from "@/components/teamslider";
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollFloat from "@/components/ScrollFloat";
 
 export default function Home() {
   return (
@@ -15,29 +15,25 @@ export default function Home() {
       <HeroSection />
 
       {/* FACULTY */}
-      <ScrollReveal type="fadeScale">
+      <ScrollFloat strength={0.7}>
         <TeacherC />
-      </ScrollReveal>
+      </ScrollFloat>
 
-      {/* CORE MEMBERS */}
-      <ScrollReveal type="fadeUp">
+      <ScrollFloat strength={1}>
         <BoardMembers />
-      </ScrollReveal>
+      </ScrollFloat>
 
-      {/* DEPARTMENTS */}
-      <ScrollReveal type="slideRight">
+      <ScrollFloat strength={1.25}>
         <TeamSliderCards />
-      </ScrollReveal>
+      </ScrollFloat>
 
-      {/* EVENTS */}
-      <ScrollReveal type="fadeScale">
+      <ScrollFloat strength={0.8}>
         <CarouselSlider />
-      </ScrollReveal>
+      </ScrollFloat>
 
-      {/* FOOTER */}
-      <ScrollReveal type="fadeUp">
+      <ScrollFloat strength={0.7}>
         <Footer />
-      </ScrollReveal>
+      </ScrollFloat>
     </main>
   );
 }
