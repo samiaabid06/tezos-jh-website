@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); // detect current route
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -16,156 +16,168 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Animation Variants
-  const navVariants = {
-    hidden: { y: -80, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, staggerChildren: 0.1 },
-    },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-  };
-
   const links = [
     { name: "Home", path: "/" },
     { name: "Members", path: "/members" },
     { name: "Events", path: "/events" },
     { name: "Blogs", path: "/blogs" },
-    { name: "Connect", path: "/connect" },
   ];
 
   return (
-    <motion.nav
-      variants ={navVariants}
-      initial="hidden"
-      animate="visible"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-md shadow-lg bg-black/40" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
-        {/* Logo */}
-        <motion.div whileHover={{ scale: 1.1 }} className="cursor-pointer">
-          <Link href="/">
+    <>
+      <motion.nav
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl rounded-full transition-all duration-500 ${
+          scrolled
+            ? "bg-[#030305]/75 backdrop-blur-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.6)] py-2.5 px-5"
+            : "bg-[#030305]/20 backdrop-blur-md border border-transparent py-3.5 px-5"
+        }`}
+      >
+        <div className="flex justify-between items-center h-9">
+          {/* Logo — unchanged, just wrapped with a signal dot */}
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group"
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             <img
               src="/logo.png"
-              alt="Logo"
-              className="h-10 md:h-12 lg:h-14 w-auto"
+              alt="Tezos JH Logo"
+              className="h-8 md:h-9 w-auto group-hover:scale-105 group-active:scale-95 transition-transform duration-300"
             />
+            <span className="hidden sm:flex items-center gap-1.5 pl-2.5 border-l border-white/10">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] pulse-dot" />
+            </span>
           </Link>
-        </motion.div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10 text-white tracking-wide">
-          {links.map((link, idx) => (
-            <motion.div
-              key={idx}
-              variants={linkVariants}
-              whileHover={{ scale: 1.1 }}
-              className={`text-base transition-colors relative ${
-                pathname === link.path ? "text-purple-400" : ""
-              }`}
+          {/* Desktop Menu — real moving indicator across ALL links */}
+          <div className="hidden md:flex items-center gap-1 relative">
+            {links.map((link) => {
+              const isActive = pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className="relative px-4 py-2 text-sm font-medium"
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 32,
+                      }}
+                      className="absolute inset-0 rounded-full bg-white/[0.06] border border-white/[0.08]"
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 transition-colors duration-300 ${
+                      isActive ? "text-white" : "text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* CTA — subtle magnetic-feel hover, no gimmicky expanding circle */}
+          <div className="hidden md:block">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSez2eFOWo1-tg3415GIub6zA4LhOSeAW35FSe4pbOaAJ7W6Ew/viewform"
+              target="_blank"
+              rel="noreferrer"
+              className="group relative inline-flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-[#030305] bg-white rounded-full overflow-hidden transition-transform duration-300 hover:scale-[1.04]"
             >
-              <Link
-                href={link.path}// 👈 only Members in new tab
-              >
-                {link.name}
-              </Link>
+              <span className="relative z-10">Join Us</span>
+              <ArrowUpRight
+                size={14}
+                className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#00E5FF] to-[#2C7DF7] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+          </div>
 
-              {/* underline animation if active (skip for Members since it’s new tab) */}
-              {pathname === link.path && link.name !== "Members" && (
-                <motion.span
-                  layoutId="underline"
-                  className="absolute left-0 -bottom-1 h-[2px] w-full bg-purple-400 rounded"
-                />
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Join Us Button (Desktop) */}
-        <motion.div
-          className="hidden md:block"
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-        >
+          {/* Mobile Toggle */}
           <button
-            className="relative bg-gradient-to-r from-purple-500 to-pink-500 
-                       text-white py-2 px-6 rounded-full font-medium
-                       shadow-md transition-all duration-500
-                       hover:shadow-xl hover:from-pink-500 hover:to-purple-500
-                       hover:scale-105 focus:outline-none"
+            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSez2eFOWo1-tg3415GIub6zA4LhOSeAW35FSe4pbOaAJ7W6Ew/viewform">Join Us</a>
-          </button>
-        </motion.div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden text-white hover:text-purple-300">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — staggered reveal instead of a flat fade */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="md:hidden bg-black/90 backdrop-blur-md text-white uppercase text-sm tracking-wider px-6 py-6 space-y-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-[#030305]/97 backdrop-blur-3xl md:hidden pt-32 px-6"
           >
-            {links.map((link, idx) => (
-              <motion.div
-                key={idx}
-                variants={linkVariants}
-                whileHover={{ scale: 1.05, color: "#a855f7" }}
-                onClick={() => setMenuOpen(false)}
-              >
-                <Link
-                  href={link.path}
-                  target={link.name === "Members" ? "_blank" : "_self"}
-                  rel={link.name === "Members" ? "noopener noreferrer" : undefined}
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
-
-            {/* Mobile Button */}
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full relative bg-gradient-to-r from-purple-500 to-pink-500 
-                         text-white px-5 py-2 rounded-full font-semibold text-sm
-                         shadow-md transition-all duration-500
-                         hover:shadow-xl hover:from-pink-500 hover:to-purple-500
-                         hover:scale-105 focus:outline-none"
+            <div className="absolute inset-0 grid-overlay pointer-events-none" />
+            <motion.div
+              className="relative flex flex-col space-y-2 text-center"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.06 } },
+              }}
             >
-              Join Us
-            </motion.button>
+              {links.map((link) => (
+                <motion.div
+                  key={link.path}
+                  variants={{
+                    hidden: { opacity: 0, y: 16 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <Link
+                    href={link.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={`text-3xl font-bold tracking-tight ${
+                      pathname === link.path
+                        ? "text-transparent bg-clip-text bg-gradient-to-r from-[#2C7DF7] to-[#00E5FF]"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.a
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSez2eFOWo1-tg3415GIub6zA4LhOSeAW35FSe4pbOaAJ7W6Ew/viewform"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 mx-auto w-full max-w-xs py-4 bg-white text-[#030305] rounded-full font-bold text-lg"
+              >
+                Join the Community
+              </motion.a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
 
