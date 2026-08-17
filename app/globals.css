@@ -1,57 +1,40 @@
 @import "tailwindcss";
 
 @layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #b416d4, #df55c8);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #357abd, #8e44ad);
-}
-
-
-/**{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}*/
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #030305; /* Deep space navy/black */
+    --foreground: #f4f4f5;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* By default, use Geist. We'll use Space Grotesk for headings */
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+
+  /* Apply the tech font to all headings globally */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* SLEEK PREMIUM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030305;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f2e;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2C7DF7; /* Tezos Blue */
+}
+
+/* UTILITY FOR PREMIUM GLASSMORPHISM */
+.glass-panel {
+  @apply bg-white/[0.02] border border-white/[0.05] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-xl;
 }

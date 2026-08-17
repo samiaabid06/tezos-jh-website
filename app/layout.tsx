@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavbarWrapper from "@/components/NavbarWrapper";
 
@@ -13,9 +13,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// NEW: Premium Display Font for Headings
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Tezos Jamia Hamdard",
-  description: "Official Website of Tezos Jamia Hamdard",
+  description:
+    "Official Website of Tezos Jamia Hamdard | Fostering Innovation on the Tezos Blockchain",
 };
 
 export default function RootLayout({
@@ -24,17 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/icon2.png" />
       </head>
-
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-[#030305] text-gray-100 overflow-x-hidden antialiased selection:bg-[#2C7DF7] selection:text-white`}
       >
         <NavbarWrapper />
-
         <main>{children}</main>
       </body>
     </html>
