@@ -128,11 +128,10 @@ const Footer = () => {
               </span>
             </h2>
             
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
-              Join India's most dynamic blockchain society where students, developers, and enthusiasts 
-              come together to shape the decentralized future with <span className="text-purple-400 font-semibold">Tezos technology</span>.
-            </p>
-            
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
+  Join India&apos;s most dynamic blockchain society where students, developers, and enthusiasts 
+  come together to shape the decentralized future with <span className="text-purple-400 font-semibold">Tezos technology</span>.
+</p>
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               {[
@@ -284,9 +283,9 @@ const Footer = () => {
               </div>
               
               <p className="text-gray-400 leading-relaxed">
-                India's premier student-led blockchain society, empowering the next generation of 
-                developers to build revolutionary decentralized applications on the Tezos ecosystem.
-              </p>
+  India&apos;s premier student-led blockchain society, empowering the next generation of 
+  developers to build revolutionary decentralized applications on the Tezos ecosystem.
+</p>
               
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
@@ -408,10 +407,10 @@ const Footer = () => {
                   <p className="text-purple-300 text-sm sm:text-base">Fostering Innovation in Blockchain & Web3</p>
                 </div>
               </div>
-              <p className="text-gray-400 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
-                Recognized as one of India's leading institutions for technology education, 
-                supporting student-led initiatives that drive innovation in emerging technologies.
-              </p>
+            <p className="text-gray-400 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+  Recognized as one of India&apos;s leading institutions for technology education, 
+  supporting student-led initiatives that drive innovation in emerging technologies.
+</p>
             </div>
           </div>
         </div>
