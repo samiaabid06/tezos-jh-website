@@ -10,8 +10,7 @@ const Credits: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const teamMembers: TeamMember[] = [
-    { name: 'Khubaib', role: 'Lead Developer' },
-    { name: 'Taaha', role: 'Frontend Developer' },
+    { name: 'Taaha', role: 'Lead Developer' },
     { name: 'Aatika', role: 'UI/UX Designer' },
     { name: 'Laiba Zeeai', role: 'Backend Developer' },
     { name: 'Heba', role: 'Content Manager' },
